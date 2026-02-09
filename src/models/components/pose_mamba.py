@@ -69,7 +69,7 @@ class PoseMamba(nn.Module):
         ])
 
         # Dropout
-        self.dropout = nn.Dropout(dropout)
+        # self.dropout = nn.Dropout(dropout)
 
         # Output head
         self.fc2 = nn.Sequential(
@@ -114,9 +114,9 @@ class PoseMamba(nn.Module):
         for layer_norm, mamba_layer in zip(self.layer_norms, self.mamba_layers):
             # Pre-norm architecture (like in Mamba paper)
             residual = x
+            x = mamba_layer(x) 
             x = layer_norm(x)
-            x = mamba_layer(x) + residual  # Residual connection
-            x = self.dropout(x)
+            # x = self.dropout(x)
 
         # Output projection to 6-DOF pose
         output = self.fc2(x)  # (B, L, 6)

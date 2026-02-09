@@ -24,7 +24,7 @@ net:
   num_layers: 4
   d_state: 64
   d_conv: 4
-  expand: 2
+  expand: 4
   dropout: 0.1
 
 metrics_calculator:
