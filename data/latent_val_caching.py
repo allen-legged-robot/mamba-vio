@@ -9,7 +9,7 @@ from src.utils import custom_transform
 transform_train = [custom_transform.ToTensor(),
                    custom_transform.Resize((256, 512))]
 transform_train = custom_transform.Compose(transform_train)
-dataset = KITTI("kitti_data", train_seqs=['05','07','10'], transform=transform_train, sequence_length=11)
+dataset = KITTI("/media/allen/WYN2021/data/kitti_data", train_seqs=['05','07','10'], transform=transform_train, sequence_length=11)
 save_dir = "kitti_latent_data/val_10"
 loader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=True)
 # we need to define helpers to convert the dictionary to object

@@ -1,0 +1,5 @@
+__pycache__/
+data/kitti_latent_data/
+logs/
+pretrained_models/
+.claude/

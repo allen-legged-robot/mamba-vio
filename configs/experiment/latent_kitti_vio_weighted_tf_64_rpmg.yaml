@@ -1,4 +1,3 @@
-
 # @package _global_
 
 # to execute this experiment run:
@@ -25,11 +24,11 @@ trainer:
 data:
   batch_size: 128
   train_loader:
-    root_dir: ${paths.data_dir}/kitti_latent_data/train_64
+    root_dir: ${paths.data_dir}/kitti_latent_data/train_10
   val_loader:
-    root_dir: ${paths.data_dir}/kitti_latent_data/val_64
+    root_dir: ${paths.data_dir}/kitti_latent_data/val_10
   test_loader: 
-    root_dir: ${paths.data_dir}/kitti_latent_data/val_64
+    root_dir: ${paths.data_dir}/kitti_latent_data/val_10
 
 
 model:
